@@ -16,7 +16,12 @@ window.onload = function() {
 	let cat = document.getElementById("cat");
 	cat.addEventListener("click", function(event) {
 		rot13(event);
-	})
+	});
+
+	let cat = document.getElementById("cat");
+	cat.addEventListener("click", function(event) {
+		changeFont(event, "Comic Sans MS");
+	});
 };
 
 function deleteFirstWord(event) {
@@ -27,6 +32,10 @@ function deleteFirstWord(event) {
 function changeColor(event, color) {
 	event.target.style.color = color;
 };
+
+function changeFont(event, fontFamily) {
+	event.target.style.fontFamily = fontFamily;
+}
 
 function rot13(event) {
 	var regex = new RegExp("[a-z]", "i"); //i=case insensitive, regex = regular expression
