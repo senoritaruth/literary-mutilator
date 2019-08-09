@@ -1,17 +1,14 @@
 window.onload = function() {
-	initLitMut();
+	let zombie = document.getElementById("zombie");
+	zombie.addEventListener('scroll', function(event) {
+		deleteElement(event);
+	});
 };
 
-function initLitMut () {
-	let prgh = document.getElementsByClassName("prgh");
-	let zhc = {
-		zombie: document.getElementById("zombie"),
-		hipster: document.getElementById("hipster"),
-		cat: document.getElementById("cat")
-	};
+function deleteElement (event) {
+	event.target.innerText.replace(/^\w+\W*/, "");
+};
 
-.addEventListener('scroll', {
-	handleEvent(evt) {
-	}
-	})
-}
+
+
+
