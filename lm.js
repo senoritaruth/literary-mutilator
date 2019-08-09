@@ -18,7 +18,6 @@ window.onload = function() {
 		rot13(event);
 	});
 
-	let cat = document.getElementById("cat");
 	cat.addEventListener("click", function(event) {
 		changeFont(event, "Comic Sans MS");
 	});
@@ -34,6 +33,7 @@ function changeColor(event, color) {
 };
 
 function changeFont(event, fontFamily) {
+	console.log(event);
 	event.target.style.fontFamily = fontFamily;
 }
 
