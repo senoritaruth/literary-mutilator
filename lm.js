@@ -29,6 +29,23 @@ function changeColor(event, color) {
 };
 
 function rot13(event) {
-	event.target.innerText = str_rot13.event.target.innerText
+	var regex = new RegExp("[a-z]", "i"); //i=case insensitive, regex = regular expression
+	var min = 'a'.charCodeAt(0);
+	var max = 'z'.charCodeAt(0);
+	var factor = 13;
+	var result = ""; //tied to the result += later (empty string)
+	str = event.target.innerText.toLowerCase();
 
-}
+	for (var i=0; i<str.length; i++) { //i=the counter here; c-style for loop
+		char = "";
+		if (regex.test(str[i])) {
+			char = String.fromCharCode((str.charCodeAt(i) - min + factor) % (max-min+1) + min);
+		}
+		else {
+			char = str[i];
+		}
+		result += char;
+	}
+
+	event.target.innerText = result;
+};
